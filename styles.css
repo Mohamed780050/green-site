@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+:root {
+  --reflection-color: hsl(48, 30%, 95%, 0.3);
+}
 body {
   font-family: "Tenor Sans", sans-serif;
   background-color: #f9f9f9;
@@ -125,10 +127,49 @@ p {
   letter-spacing: 1px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .contact-form button:hover {
   background-color: #1f3529;
+}
+.contact-form button:hover .reflection1,
+.contact-form button:hover .reflection2 {
+  left: 100%;
+}
+.reflection1,
+.reflection2 {
+  width: 8px;
+  height: 120px;
+  position: absolute;
+  background-color: var(--reflection-color);
+  rotate: 30deg;
+  inset: 0;
+  z-index: -1;
+  top: 0;
+  margin: auto;
+  left: -180%;
+  transition: left 1s cubic-bezier(0.2, 0.5, 0.2, 1.2);
+}
+.reflection1::after {
+  content: "";
+  width: 26px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: 1.25rem;
+}
+.reflection2::after {
+  content: "";
+  width: 40px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: 0.8rem;
 }
 
 @media (max-width: 1200px) {

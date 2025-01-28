@@ -212,6 +212,7 @@ p {
   }
   .leaf-image {
     height: 40vh;
+    left: -8rem;
   }
 
   h1 {
@@ -222,11 +223,7 @@ p {
     margin-top: 2rem;
   }
 }
-@media (max-width: 768px) {
-  .leaf-image {
-    height: 35vh;
-  }
-}
+
 @keyframes scale-up {
   0% {
     transform: scale(1);

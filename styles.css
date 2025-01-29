@@ -57,7 +57,7 @@ header {
 }
 
 .leaf-image {
-  position: relative;
+  position: absolute;
   height: 60vh;
   object-fit: contain;
   z-index: 2;
@@ -212,7 +212,6 @@ p {
   }
   .leaf-image {
     height: 40vh;
-    left: -8rem;
   }
 
   h1 {
